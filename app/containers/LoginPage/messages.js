@@ -16,5 +16,9 @@ export default defineMessages({
  enterpreneurIntro: {
     id: `${scope}.enterpreneurIntro`,
     defaultMessage: 'Connect With Investors Upload Content Sell Subscriptions & Content make Tons Of Money',
-  } 
+  },
+  forgotPassword: {
+    id: `${scope}.forgotPassword`,
+    defaultMessage: 'Forgot Password?',
+  }, 
 });

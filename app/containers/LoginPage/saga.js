@@ -12,6 +12,7 @@
 
   try {
     let resp = yield call(loginUserApi, action)
+    localStorage.setItem('token', resp.data.token)
     yield put({type: LOGIN_USER_SUCCESS, message: resp.message, token: resp.data.token})
   } catch(err) {
     if(err.error === "Invalid inputs") {

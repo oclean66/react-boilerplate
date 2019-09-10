@@ -13,4 +13,8 @@ export default defineMessages({
     id: `${scope}.header`,
     defaultMessage: 'This is the ProfilePage container!',
   },
+  logout: {
+    id: `${scope}.logout`,
+    defaultMessage: 'Logout',
+  }
 });

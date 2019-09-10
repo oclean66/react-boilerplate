@@ -13,8 +13,9 @@ import { compose } from 'redux';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
- 
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+
 import makeSelectLoginPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
@@ -42,7 +43,7 @@ export function LoginPage(props) {
       <IntroDiv>
         <p><FormattedMessage {...messages.enterpreneurIntro}/></p>
       </IntroDiv>
-      <StyledButton onClick={() => {props.history.push('/signup/entrepreneur')}}>Sign Up</StyledButton>
+      <StyledButton onClick={() => {props.history.push(`/signup/${props.match.params.type}`)}}>Sign Up</StyledButton>
       <H2 style={{textAlign: 'center'}}>OR</H2>
       {errors && errors.length > 0 && <ul className="errors">
       {errors.map((error,key) => {
@@ -59,7 +60,7 @@ export function LoginPage(props) {
         </div>
         <StyledButton type="submit">Login</StyledButton>
       </form>
-      <a href="#" className="forget-link">Forgot Password?</a>
+      <Link to='/forgot-password' className="forget-link"><FormattedMessage {...messages.forgotPassword}/></Link>
     </div>
   );
 }

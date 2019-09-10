@@ -5,6 +5,7 @@
  */
 import produce from 'immer';
 import { DEFAULT_ACTION, LOGIN_USER_FAILED, LOGIN_USER_SUCCESS, HANDLE_CHANGE } from './constants';
+import {LOGOUT_USER} from 'containers/ProfilePage/constants';
 
 export const initialState = {
   username: '',
@@ -22,13 +23,12 @@ const loginPageReducer = (state = initialState, action) =>
     switch (action.type) {
       case DEFAULT_ACTION:
         break;
-        case HANDLE_CHANGE: 
+      case HANDLE_CHANGE: 
         return {
           ...state,
           [action.name]: action.value
         }
       case LOGIN_USER_FAILED:
-        console.log('aa')
         return  {
           ...state,
           errors: action.errors
@@ -39,6 +39,10 @@ const loginPageReducer = (state = initialState, action) =>
           message: action.message,
           success: true,
           token: action.token
+        }
+      case LOGOUT_USER:
+        return  {
+          ...initialState
         }
     }
   });

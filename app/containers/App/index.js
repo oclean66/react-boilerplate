@@ -14,7 +14,10 @@ import HomePage from 'containers/HomePage/Loadable';
 import LoginPage from 'containers/LoginPage/Loadable';
 import SignupPage from 'containers/SignupPage/Loadable';
 import ProfilePage from 'containers/ProfilePage/Loadable';
+import ForgotPasswordPage from 'containers/ForgotPasswordPage/Loadable';
+
 import PrivateRoute from 'components/PrivateRoute';
+import GuestRoute from 'components/GuestRoute';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
@@ -24,9 +27,10 @@ export default function App() {
   return (
     <Container>
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/login/:type" component={LoginPage} />
-        <Route exact path="/signup/:type" component={SignupPage} />
+        <GuestRoute exact path="/" component={HomePage} />
+        <GuestRoute exact path="/login/:type" component={LoginPage} />
+        <GuestRoute exact path="/signup/:type" component={SignupPage} />
+        <GuestRoute exact path="/forgot-password" component={ForgotPasswordPage} />
         <PrivateRoute
           exact 
           path="/profile"
