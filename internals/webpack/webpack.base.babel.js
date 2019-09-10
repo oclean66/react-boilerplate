@@ -11,7 +11,7 @@ module.exports = options => ({
   output: Object.assign(
     {
       // Compile into js/build.js
-      path: path.resolve(process.cwd(), 'build'),
+      path: path.resolve(process.cwd(), 'public'),
       publicPath: '/',
     },
     options.output,
@@ -33,7 +33,7 @@ module.exports = options => ({
         // for a list of loaders, see https://webpack.js.org/loaders/#styling
         test: /\.s[ac]ss$/i,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader',],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         // Preprocess 3rd party .css files located in node_modules
