@@ -9,17 +9,20 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import Logo from '../../components/Logo';
+import Screen from '../../components/Screen';
 
 import {Button} from '../../components/UI';
 import InstagramIcon from '../../images/instagram-icon.png';
 import SnapchatIcon from '../../images/snapchat-icon.png';
 import TumblrIcon from '../../images/tumblr-icon.png';
 import YoutubeIcon from '../../images/youtube-icon.png';
+import setBackgroundImage from '../../utils/setbackgroundImage';
 
 export default function HomePage(props) {
   const gotoLogin = (type) => {
     props.history.push(`/login/${type}`)
   }
+  setBackgroundImage();
   return (<>
     <Logo/>
     <div className="auth-container">
@@ -34,7 +37,5 @@ export default function HomePage(props) {
         <img src={YoutubeIcon} className="social-icon-small"/>
       </div>
     </div>
-  
-     
   </>);
 }

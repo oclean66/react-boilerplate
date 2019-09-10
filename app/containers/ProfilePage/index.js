@@ -17,14 +17,16 @@ import makeSelectProfilePage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
+import {Button} from 'components/UI';
+import {logoutAction} from './actions';
 
-export function ProfilePage() {
+export function ProfilePage(props) {
   useInjectReducer({ key: 'profilePage', reducer });
   useInjectSaga({ key: 'profilePage', saga });
 
   return (
     <div>
-      <FormattedMessage {...messages.header} />
+      <Button onClick={() => props.dispatch(logoutAction())}><FormattedMessage {...messages.logout} /></Button>
     </div>
   );
 }

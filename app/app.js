@@ -29,6 +29,7 @@ import 'file-loader?name=.htaccess!./.htaccess';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 import configureStore from './configureStore';
+import {LOGIN_USER_SUCCESS} from './containers/LoginPage/constants';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
@@ -39,6 +40,11 @@ import './assets/style.scss'
 const initialState = {};
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
+
+if (localStorage.token) {
+  const token = localStorage.token 
+  store.dispatch({type: LOGIN_USER_SUCCESS, token: token})
+}
 
 const render = messages => {
   ReactDOM.render(
