@@ -15,7 +15,7 @@ import LoginPage from 'containers/LoginPage/Loadable';
 import SignupPage from 'containers/SignupPage/Loadable';
 import ProfilePage from 'containers/ProfilePage/Loadable';
 import ForgotPasswordPage from 'containers/ForgotPasswordPage/Loadable';
-
+import WhyPage from 'containers/WhyPage/Loadable';
 import PrivateRoute from 'components/PrivateRoute';
 import GuestRoute from 'components/GuestRoute';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -31,6 +31,7 @@ export default function App() {
         <GuestRoute exact path="/login/:type" component={LoginPage} />
         <GuestRoute exact path="/signup/:type" component={SignupPage} />
         <GuestRoute exact path="/forgot-password" component={ForgotPasswordPage} />
+        <GuestRoute exact path="/why/:type" component={WhyPage} />
         <PrivateRoute
           exact 
           path="/profile"

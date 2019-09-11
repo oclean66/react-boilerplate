@@ -23,6 +23,8 @@ import messages from './messages';
 import Logo from '../../components/Logo';
 import {IntroDiv, Button, H2, Input} from '../../components/UI';
 import {handleChange, handleSubmit} from './actions';
+import setBackgroundImage from '../../utils/setbackgroundImage';
+import SocialAuthButtons from 'components/SocialAuthButtons';
 
 const StyledButton = styled(Button)`
   margin: 0 auto;
@@ -37,31 +39,41 @@ export function LoginPage(props) {
   if(success) {
     props.history.push('/profile')
   }
+
+  setBackgroundImage();
+  
   return (
-    <div>
+    <>
       <Logo/>
-      <IntroDiv>
-        <p><FormattedMessage {...messages.enterpreneurIntro}/></p>
-      </IntroDiv>
-      <StyledButton onClick={() => {props.history.push(`/signup/${props.match.params.type}`)}}>Sign Up</StyledButton>
-      <H2 style={{textAlign: 'center'}}>OR</H2>
-      {errors && errors.length > 0 && <ul className="errors">
-      {errors.map((error,key) => {
-      return <li key={key} >{error.msg || error  }</li>
-    })}
-    </ul>}
-    {success && <p className="success">{message}</p>}
-    <form onSubmit={(e) => {e.preventDefault();  props.dispatch(handleSubmit(username,password))}}>
-        <div className="input-field">
-          <Input name="username"  placeholder="Username" type="text" onChange={(e) => props.dispatch(handleChange(e.target.name, e.target.value))}/>
-        </div>
-        <div className="input-field">
-          <Input name="password" type="password" placeholder="password" onChange={(e) => props.dispatch(handleChange(e.target.name, e.target.value))}/>
-        </div>
-        <StyledButton type="submit">Login</StyledButton>
-      </form>
-      <Link to='/forgot-password' className="forget-link"><FormattedMessage {...messages.forgotPassword}/></Link>
-    </div>
+      <div className="auth-container">
+          <IntroDiv>
+            <p><FormattedMessage {...messages.enterpreneurIntro}/></p>
+          </IntroDiv>
+          <StyledButton onClick={() => {props.history.push(`/signup/${props.match.params.type}`)}}>Sign Up</StyledButton>
+          <H2 style={{textAlign: 'center'}}>OR</H2>
+          {errors && errors.length > 0 && <ul className="errors">
+            {errors.map((error,key) => {
+              return <li key={key} >{error.msg || error  }</li>
+            })}
+          </ul>}
+          {success && <p className="success">{message}</p>}
+          <form onSubmit={(e) => {e.preventDefault();  props.dispatch(handleSubmit(username,password))}}>
+            <div className="input-fields">
+              <Input name="username"  placeholder="Username" type="text" onChange={(e) => props.dispatch(handleChange(e.target.name, e.target.value))}/>
+            </div>
+            <div className="input-fields">
+              <Input name="password" type="password" placeholder="password" onChange={(e) => props.dispatch(handleChange(e.target.name, e.target.value))}/>
+            </div>
+            <StyledButton type="submit">Login</StyledButton>
+          </form>
+          <Link to='/forgot-password' className="forget-link"><FormattedMessage {...messages.forgotPassword}/></Link>
+      </div>
+      <div className="bottom-links">
+          <Link to={`/why/${props.match.params.type}`} className="link"><FormattedMessage {...messages.why}/></Link>
+          <SocialAuthButtons/>
+          <Link to='/' className="link">Login</Link>
+      </div>
+    </>
   );
 }
 

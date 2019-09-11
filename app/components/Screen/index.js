@@ -2,17 +2,9 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import ScreenImage from '../../images/screen.png';
 
-const LogoDiv = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px; 
-`;
-
-const Screen= () => {
-    return <img src={ScreenImage}/>
+const Screen= (props) => {
+    return <figure className="screen-container"><img src={props.img} alt="" className="screens"/></figure>
 }
 
 export default Screen;
