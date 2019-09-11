@@ -2,6 +2,11 @@
 body {
     font-family: ArvoBold;
     #app {
+        .screen-container {
+            margin: 0;
+            text-align: center;
+            
+        }
         .errors {
             color: red
         }
@@ -11,26 +16,27 @@ body {
         .button-group {
             display: flex;
             flex-direction: column;
-            button {
-                
-            }
         }
         .social-auth-buttons {
             display: flex;
-            margin-top: 5px;
-            margin-bottom: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             .social-icon-small {
                 width: 40px;
                 height: 40px;
                 display: flex;
-                flex: 1;
+                margin: 0 10px;
             }
         }
         .auth-container {
+            margin: 0 auto;
+            height: 100vh;
+            max-width: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            height: 100vh;
+            .input-fields{
+                margin: 20px 0;
+            }
         }
         .login-page {
             display: flex;
@@ -39,7 +45,30 @@ body {
         .forget-link {
             color: #ffffff;
             display: block;
-            text-align: center
+            text-align: center;
+            margin-top: 20px;
+        }
+        .bottom-links{
+            display: flex;
+            .link {
+                display: flex;
+                background-color: #2d6da9;
+                padding: 10px;
+                border-radius: 5px;
+                color: #ffffff;
+                justify-content: center;
+                align-items: center;
+                flex: 1
+            }
+        }
+        .list {
+            color: #ffffff;
+            list-style: none;
+            li {
+                margin: 10px 0;
+                text-align: center;
+                font-size: 14px;
+            }
         }
     }
 }

@@ -2,11 +2,9 @@
 import styled from 'styled-components';
 
 const IntroDiv = styled.div`
-    display: flex;
     color: #ffffff;
-    justify-content: center;
-    width: 70%;
-    margin: 0 auto;
+    text-align: center;
+
 `;
 
 export default IntroDiv;

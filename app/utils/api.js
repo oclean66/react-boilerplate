@@ -25,7 +25,7 @@ class Api {
     }
 
     static xhr(route, params, verb) {
-        const host = 'http://projectlcapiproxy-env.p9hc8jyky7.us-east-1.elasticbeanstalk.com';
+        const host = 'https://api.master.lc.kimeurlabs.com';
         const url = `${host}${route}`;
         let options = Object.assign({ method: verb}, params ? { body: JSON.stringify(params)}: null);
         options.headers = Api.headers();

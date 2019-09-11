@@ -16,6 +16,7 @@ import InstagramIcon from '../../images/instagram-icon.png';
 import SnapchatIcon from '../../images/snapchat-icon.png';
 import TumblrIcon from '../../images/tumblr-icon.png';
 import YoutubeIcon from '../../images/youtube-icon.png';
+import Screen1 from '../../images/screen.png';
 import setBackgroundImage from '../../utils/setbackgroundImage';
 
 export default function HomePage(props) {
@@ -26,16 +27,17 @@ export default function HomePage(props) {
   return (<>
     <Logo/>
     <div className="auth-container">
-      <div className="social-auth-buttons">
+      <Screen img={Screen1}/>
+    </div>
+    <div className="social-auth-buttons">
         <img src={InstagramIcon} className="social-icon-small"/>
         <Button onClick={() => gotoLogin('entrepreneur')} style={{flex: 10}}><FormattedMessage {...messages.enterpreneursBtn} /></Button>
         <img src={SnapchatIcon} className="social-icon-small"/>
-      </div>
-      <div className="social-auth-buttons">
+    </div>
+    <div className="social-auth-buttons">
         <img src={TumblrIcon} className="social-icon-small"/>
         <Button  onClick={() => gotoLogin('investor')}  style={{flex: 10}}><FormattedMessage {...messages.investorBtn} /></Button>
         <img src={YoutubeIcon} className="social-icon-small"/>
-      </div>
     </div>
   </>);
 }

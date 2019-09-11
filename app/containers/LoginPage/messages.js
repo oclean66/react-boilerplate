@@ -21,4 +21,8 @@ export default defineMessages({
     id: `${scope}.forgotPassword`,
     defaultMessage: 'Forgot Password?',
   }, 
+  why: {
+    id: `${scope}.why`,
+    defaultMessage: 'Why Us?',
+  }, 
 });
