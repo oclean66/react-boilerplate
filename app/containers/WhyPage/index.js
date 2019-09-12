@@ -7,25 +7,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import styled from 'styled-components';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
+import BlackBg from 'components/BlackBg';
+import Logo from 'components/Logo';
+import { H2, ScrolledDiv } from 'components/UI';
 import makeSelectWhyPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
-import BlackBg from 'components/BlackBg';
-import Logo from 'components/Logo';
-import {H2, ScrolledDiv} from 'components/UI'
 
 const StyledH2 = styled(H2)`
   text-align: center;
   font-size: 28px;
-`
+`;
 
 export function WhyPage() {
   useInjectReducer({ key: 'whyPage', reducer });
@@ -33,10 +31,10 @@ export function WhyPage() {
 
   return (
     <BlackBg>
-      <Logo/>
+      <Logo />
       <StyledH2>Why Become An Entrepreneur?</StyledH2>
       <ScrolledDiv>
-        <ul className="list">
+        <ul className="list a">
           <li>75% Starting Payout With Potential To 85%</li>
           <li>Rewards Program To Make Extra Money</li>
           <li>The Ability To Sell Your Products</li>

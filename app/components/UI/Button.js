@@ -1,8 +1,7 @@
- 
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background-color: #2d6da9;
+  background-image: linear-gradient(#3478bb, #0d355d);
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -10,6 +9,7 @@ const Button = styled.button`
   border-radius: 5px;
   font-weight: bold;
   border: 0;
+  font-size: 2.5vh;
 `;
 
 export default Button;

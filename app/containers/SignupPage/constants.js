@@ -1,3 +1,4 @@
+dispatch;
 /*
  *
  * SignupPage constants
