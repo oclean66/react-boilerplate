@@ -1,4 +1,3 @@
-dispatch;
 /*
  *
  * SignupPage constants
