@@ -119,7 +119,7 @@ export function SignupPage(props) {
                     textAlign: 'center',
                     margin: '2px',
                     color: '#ffffff',
-                    fontSize:'2vh'
+                    fontSize: '2vh',
                   }}
                 >
                   Read Our Terms & Condition{' '}
