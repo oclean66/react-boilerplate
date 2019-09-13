@@ -10,12 +10,10 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
 import SocialAuthButtons from 'components/SocialAuthButtons';
 import makeSelectLoginPage from './selectors';
 import reducer from './reducer';

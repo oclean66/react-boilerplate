@@ -39,6 +39,9 @@ export function SignupPage(props) {
     success,
     message,
   } = props.signupPage;
+  if (success) {
+    props.history.push('/profile');
+  }
 
   const { type } = props.match.params;
 
@@ -116,6 +119,7 @@ export function SignupPage(props) {
                     textAlign: 'center',
                     margin: '2px',
                     color: '#ffffff',
+                    fontSize:'2vh'
                   }}
                 >
                   Read Our Terms & Condition{' '}

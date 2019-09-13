@@ -20,10 +20,10 @@ const Img = styled.img`
 
 const SocialAuthButtons = () => (
   <Div>
-    <Img src={TwitterIcon} className="social-icon-small" />
-    <Img src={InstagramIcon} className="social-icon-small" />
-    <Img src={YoutubeIcon} className="social-icon-small" />
-    <Img src={FacebookIcon} className="social-icon-small" />
+    <a href="https://twitter.com/?lang=en" target="_blank"><Img src={TwitterIcon} alt="" className="social-icon-small" /></a>  
+    <a href="https://www.instagram.com/?hl=en" target="_blank"><Img src={InstagramIcon}  alt="" className="social-icon-small" /></a>
+    <a href="https://www.youtube.com/" target="_blank"><Img src={YoutubeIcon} alt="" className="social-icon-small" /></a>
+    <a href="https://www.facebook.com/" target="_blank"><Img src={FacebookIcon} alt="" className="social-icon-small" /></a>
   </Div>
 );
 
