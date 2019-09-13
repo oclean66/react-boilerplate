@@ -10,12 +10,10 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
 import SocialAuthButtons from 'components/SocialAuthButtons';
 import makeSelectLoginPage from './selectors';
 import reducer from './reducer';
@@ -99,14 +97,16 @@ export function LoginPage(props) {
           <FormattedMessage {...messages.forgotPassword} />
         </Link>
       </div>
-      <div className="bottom-links">
-        <Link to={`/why/${props.match.params.type}`} className="link">
-          <FormattedMessage {...messages.why} />
-        </Link>
-        <SocialAuthButtons />
-        <Link to="/" className="link">
-          Login
-        </Link>
+      <div>
+        <div className="bottom-links">
+          <Link to={`/why/${props.match.params.type}`} className="link">
+            <FormattedMessage {...messages.why} />
+          </Link>
+          <SocialAuthButtons />
+          <Link to="/" className="link">
+            Login
+          </Link>
+        </div>
       </div>
     </>
   );

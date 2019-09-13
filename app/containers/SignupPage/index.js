@@ -39,11 +39,14 @@ export function SignupPage(props) {
     success,
     message,
   } = props.signupPage;
+  if (success) {
+    props.history.push('/profile');
+  }
 
   const { type } = props.match.params;
 
   return (
-    <div style={{ margin: '0 auto' }}>
+    <div>
       <div className="auth-container">
         <Logo />
         <IntroDiv>
@@ -59,63 +62,82 @@ export function SignupPage(props) {
           </ul>
         )}
         {success && <p className="success">{message}</p>}
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            props.dispatch(handleSubmit(email, username, password, type));
-          }}
-        >
-          <div className="input-field">
-            <Input
-              name="email"
-              placeholder="Email Address"
-              type="email"
-              value={email}
-              onChange={e =>
-                props.dispatch(handleChange(e.target.name, e.target.value))
-              }
-            />
-          </div>
-          <div className="input-field">
-            <Input
-              name="username"
-              placeholder="Username"
-              type="text"
-              value={username}
-              onChange={e =>
-                props.dispatch(handleChange(e.target.name, e.target.value))
-              }
-            />
-          </div>
-          <div className="input-field">
-            <Input
-              name="password"
-              type="password"
-              placeholder="password"
-              value={password}
-              onChange={e =>
-                props.dispatch(handleChange(e.target.name, e.target.value))
-              }
-            />
-          </div>
-          <StyledButton type="submit">Sign Up</StyledButton>
-        </form>
-        <H2 style={{ textAlign: 'center' }}>have An Account Already?</H2>
-        <Link to="/login/enterpreneur" className="forget-link">
-          Sign In Here
-        </Link>
-      </div>
-      <div style={{ marginTop: '-25px' }}>
-        <Link to="/">
-          <p style={{ textAlign: 'center', margin: '2px', color: '#ffffff' }}>
-            Read Our Terms & Condition{' '}
-          </p>
-        </Link>
-        <StyledButton
-          style={{ marginTop: '0', fontSize: '2.4vh', borderRadius: '5px' }}
-        >
-          Access My WePitch Profile Now
-        </StyledButton>
+
+        <div>
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+              props.dispatch(handleSubmit(email, username, password, type));
+            }}
+            style={{ maxWidth: '742px', margin: '0 auto' }}
+          >
+            <div className="input-field">
+              <Input
+                name="email"
+                placeholder="Email Address"
+                type="email"
+                value={email}
+                onChange={e =>
+                  props.dispatch(handleChange(e.target.name, e.target.value))
+                }
+              />
+            </div>
+            <div className="input-field">
+              <Input
+                name="username"
+                placeholder="Username"
+                type="text"
+                value={username}
+                onChange={e =>
+                  props.dispatch(handleChange(e.target.name, e.target.value))
+                }
+              />
+            </div>
+            <div className="input-field">
+              <Input
+                name="password"
+                type="password"
+                placeholder="password"
+                value={password}
+                onChange={e =>
+                  props.dispatch(handleChange(e.target.name, e.target.value))
+                }
+              />
+            </div>
+            <H2 style={{ textAlign: 'center' }}>Have An Account Already?</H2>
+            <Link
+              to="/login/enterpreneur"
+              className="forget-link"
+              style={{ marginTop: '0' }}
+            >
+              Sign In Here
+            </Link>
+            <div className="SignUpBtn">
+              <Link to="/">
+                <p
+                  style={{
+                    textAlign: 'center',
+                    margin: '2px',
+                    color: '#ffffff',
+                    fontSize: '2vh',
+                  }}
+                >
+                  Read Our Terms & Condition{' '}
+                </p>
+              </Link>
+              <StyledButton
+                style={{
+                  marginTop: '0',
+                  fontSize: '2.4vh',
+                  borderRadius: '5px',
+                }}
+                type="submit"
+              >
+                Access My WePitch Profile Now
+              </StyledButton>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
