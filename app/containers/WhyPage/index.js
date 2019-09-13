@@ -15,42 +15,34 @@ import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import BlackBg from 'components/BlackBg';
 import Logo from 'components/Logo';
-import { H2, ScrolledDiv } from 'components/UI';
+import { H2 } from 'components/UI';
+import OverflowScrolling from 'react-overflow-scrolling';
+
 import makeSelectWhyPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import EntrepreneuerWhy from "components/Why/entrepreneuerWhy";
+import InvestorWhy from "components/Why/investorWhy";
 
 const StyledH2 = styled(H2)`
   text-align: center;
   font-size: 28px;
 `;
 
-export function WhyPage() {
+export function WhyPage(props) {
   useInjectReducer({ key: 'whyPage', reducer });
   useInjectSaga({ key: 'whyPage', saga });
 
   return (
     <BlackBg>
       <Logo />
-      <StyledH2>Why Become An Entrepreneur?</StyledH2>
-      <ScrolledDiv>
-        <ul className="list a">
-          <li>75% Starting Payout With Potential To 85%</li>
-          <li>Rewards Program To Make Extra Money</li>
-          <li>The Ability To Sell Your Products</li>
-          <li>Life Time Memberships & Multiple Sub Options</li>
-          <li>Free Album, Video Previews, Photo Blurring</li>
-          <li>Dozen Profile Themes</li>
-          <li>24 Hour Support Team</li>
-          <li>How To Video Tutorials For Entire Site</li>
-          <li>Live Streaming With Archive System & Tips</li>
-          <li>Email Notifications</li>
-          <li>Send Discounts To All Expired Users At Once</li>
-          <li>Goals For Fans To Unlock As A Group</li>
-          <li>Watermark Ability For All Photos & Videos</li>
-          <li>Reviews & Ratings</li>
-        </ul>
-      </ScrolledDiv>
+      <StyledH2>Why Become An {props.match.params.type}</StyledH2>
+      <OverflowScrolling className='overflow-scrolling'>
+        {props.match.params.type === "entrepreneur" ? <EntrepreneuerWhy/> : <InvestorWhy/>}
+      
+        
+      </OverflowScrolling>
+      
     </BlackBg>
   );
 }
