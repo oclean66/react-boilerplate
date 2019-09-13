@@ -23,9 +23,10 @@ body {
             display: flex;
             margin-top: 10px;
             margin-bottom: 10px;
-            height: 10vh;
+            max-width: 768px;
+            margin: 10px auto;
             .social-icon-small {
-                width: 7vw;
+                width: 48px;
                 height: 7vh;
                 display: flex;
                 margin: 0 10px;
@@ -53,6 +54,8 @@ body {
         .bottom-links{
             display: flex;
             padding-bottom: 10px;
+            max-width: 768px;
+            margin: 0 auto;
             .link {
                 display: flex;
                 background-image: linear-gradient(#3478BB, #0D355D);
@@ -62,7 +65,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 flex: 1 ;
-                font-size: 1.9vh;
+                font-size: 1.5vh;
             }
             
         }
@@ -90,6 +93,17 @@ body {
         }
         .input-field {
             margin: 20px 0;
+        }
+
+        .SignUpBtn{
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            padding-bottom: 10px;
+        }
+        .LSboI{
+            font-size: 1em;
         }
        
     }
