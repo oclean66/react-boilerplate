@@ -99,14 +99,16 @@ export function LoginPage(props) {
           <FormattedMessage {...messages.forgotPassword} />
         </Link>
       </div>
-      <div className="bottom-links">
-        <Link to={`/why/${props.match.params.type}`} className="link">
-          <FormattedMessage {...messages.why} />
-        </Link>
-        <SocialAuthButtons />
-        <Link to="/" className="link">
-          Login
-        </Link>
+      <div>
+        <div className="bottom-links">
+          <Link to={`/why/${props.match.params.type}`} className="link">
+            <FormattedMessage {...messages.why} />
+          </Link>
+          <SocialAuthButtons />
+          <Link to="/" className="link">
+            Login
+          </Link>
+        </div>
       </div>
     </>
   );
