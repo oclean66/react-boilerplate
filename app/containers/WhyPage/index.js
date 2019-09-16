@@ -26,7 +26,6 @@ import InvestorWhy from "components/Why/investorWhy";
 
 const StyledH2 = styled(H2)`
   text-align: center;
-  font-size: 28px;
 `;
 
 export function WhyPage(props) {
@@ -38,11 +37,8 @@ export function WhyPage(props) {
       <Logo />
       <StyledH2>Why Become An {props.match.params.type}</StyledH2>
       <OverflowScrolling className='overflow-scrolling'>
-        {props.match.params.type === "entrepreneur" ? <EntrepreneuerWhy/> : <InvestorWhy/>}
-      
-        
+        {props.match.params.type === "entrepreneur" ? <EntrepreneuerWhy /> : <InvestorWhy />}
       </OverflowScrolling>
-      
     </BlackBg>
   );
 }

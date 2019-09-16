@@ -32,21 +32,29 @@ export default function HomePage(props) {
       </div>
       <div>
         <div className="social-auth-buttons">
-          <img src={TwitterIcon} alt="" className="social-icon-small" />
+        <a href="https://twitter.com/?lang=en" target="_blank">
+        <img src={TwitterIcon} alt="" className="social-icon-small" />
+        </a>
           <Button
             onClick={() => gotoLogin('entrepreneur')}
             style={{ flex: 10 }}
           >
             <FormattedMessage {...messages.enterpreneursBtn} />
           </Button>
-          <img src={FacebookIcon} alt="" className="social-icon-small" />
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src={FacebookIcon} alt="" className="social-icon-small" />
+          </a>
         </div>
         <div className="social-auth-buttons">
-          <img src={InstagramIcon} alt="" className="social-icon-small" />
+          <a href="https://www.instagram.com/?hl=en" target="_blank">
+            <img src={InstagramIcon} alt="" className="social-icon-small" />
+          </a>
           <Button onClick={() => gotoLogin('investor')} style={{ flex: 10 }}>
             <FormattedMessage {...messages.investorBtn} />
           </Button>
-          <img src={YoutubeIcon} alt="" className="social-icon-small" />
+          <a href="https://www.youtube.com/" target="_blank">
+            <img src={YoutubeIcon} alt="" className="social-icon-small" />
+          </a>
         </div>
       </div>
     </>
