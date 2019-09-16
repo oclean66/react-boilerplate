@@ -18,11 +18,11 @@ import Logo from 'components/Logo';
 import { H2 } from 'components/UI';
 import OverflowScrolling from 'react-overflow-scrolling';
 
+import EntrepreneuerWhy from 'components/Why/entrepreneuerWhy';
+import InvestorWhy from 'components/Why/investorWhy';
 import makeSelectWhyPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import EntrepreneuerWhy from "components/Why/entrepreneuerWhy";
-import InvestorWhy from "components/Why/investorWhy";
 
 const StyledH2 = styled(H2)`
   text-align: center;
@@ -36,8 +36,12 @@ export function WhyPage(props) {
     <BlackBg>
       <Logo />
       <StyledH2>Why Become An {props.match.params.type}</StyledH2>
-      <OverflowScrolling className='overflow-scrolling'>
-        {props.match.params.type === "entrepreneur" ? <EntrepreneuerWhy /> : <InvestorWhy />}
+      <OverflowScrolling className="overflow-scrolling">
+        {props.match.params.type === 'entrepreneur' ? (
+          <EntrepreneuerWhy />
+        ) : (
+          <InvestorWhy />
+        )}
       </OverflowScrolling>
     </BlackBg>
   );

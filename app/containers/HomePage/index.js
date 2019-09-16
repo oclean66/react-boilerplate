@@ -32,9 +32,9 @@ export default function HomePage(props) {
       </div>
       <div>
         <div className="social-auth-buttons">
-        <a href="https://twitter.com/?lang=en" target="_blank">
-        <img src={TwitterIcon} alt="" className="social-icon-small" />
-        </a>
+          <a href="https://twitter.com/?lang=en" target="_blank">
+            <img src={TwitterIcon} alt="" className="social-icon-small" />
+          </a>
           <Button
             onClick={() => gotoLogin('entrepreneur')}
             style={{ flex: 10 }}
