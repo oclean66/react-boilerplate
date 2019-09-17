@@ -19,9 +19,10 @@ import WhyPage from 'containers/WhyPage/Loadable';
 import PrivateRoute from 'components/PrivateRoute';
 import GuestRoute from 'components/GuestRoute';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import GridPage from 'containers/GridPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
-import {Container} from '../../components/UI';
+import { Container } from '../../components/UI';
 
 export default function App() {
   return (
@@ -30,13 +31,14 @@ export default function App() {
         <GuestRoute exact path="/" component={HomePage} />
         <GuestRoute exact path="/login/:type" component={LoginPage} />
         <GuestRoute exact path="/signup/:type" component={SignupPage} />
-        <GuestRoute exact path="/forgot-password" component={ForgotPasswordPage} />
-        <GuestRoute exact path="/why/:type" component={WhyPage} />
-        <PrivateRoute
-          exact 
-          path="/profile"
-          component={ProfilePage}
+        <GuestRoute
+          exact
+          path="/forgot-password"
+          component={ForgotPasswordPage}
         />
+        <GuestRoute exact path="/why/:type" component={WhyPage} />
+        <PrivateRoute exact path="/profile" component={ProfilePage} />
+        <PrivateRoute exact path="/grid" component={GridPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

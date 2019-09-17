@@ -4,19 +4,23 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const GuestRoute = ({ isAuthenticated, component: Component, ...rest }) => (
-    <Route {...rest} render={props => 
-        !isAuthenticated ? <Component {...props}/> : <Redirect to="/profile" /> }/>
+  <Route
+    {...rest}
+    render={props =>
+      !isAuthenticated ? <Component {...props} /> : <Redirect to="/grid" />
+    }
+  />
 );
 
 GuestRoute.propTypes = {
-    component: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool.isRequired
-}
+  component: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+};
 
 function mapStateToProps(state) {
-    return {
-        isAuthenticated: !!state.login.token
-    }
+  return {
+    isAuthenticated: !!state.login.token,
+  };
 }
 
 export default connect(mapStateToProps)(GuestRoute);
