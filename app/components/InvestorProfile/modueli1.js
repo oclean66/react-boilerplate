@@ -2,8 +2,11 @@ import React from 'react';
 import { Button } from 'components/UI';
 
 const Modeueli1 = () => (
-  <div>
+  <div className="Modeuel1border">
     <section className="moduel1head">
+      <div onClick={alert} className="cancel">
+        x
+      </div>
       <h1>Complete Investor Account SetUp</h1>
     </section>
     <section className="moduel1list">
@@ -21,12 +24,8 @@ const Modeueli1 = () => (
       <h3>How To : Close This Menu > My Settings</h3>
     </section>
     <section className="module1foot">
-      <li>
-        <h1>Have A Question?</h1>
-      </li>
-      <li>
-        <Button>Visit Support</Button>
-      </li>
+      <h1>Have A Question?</h1>
+      <Button>Visit Support</Button>
     </section>
   </div>
 );

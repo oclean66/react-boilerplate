@@ -2,11 +2,14 @@ import React from 'react';
 import { Button } from 'components/UI';
 
 const Modeuel1 = () => (
-  <div>
+  <div className="Modeuel1border">
     <section className="moduel1head">
+      <div onClick={alert} className="cancel">
+        x
+      </div>
       <h1>
-        Complete The Six Steps Below In Order To Start Making Money On We{' '}
-        <span style={{ color: '#1473bf' }}> P</span>itch Today!
+        Complete The Six Steps Below In Order To Start Making Money On We
+        <span style={{ color: '#1473bf' }}>P</span>itch Today!
       </h1>
     </section>
     <section className="moduel1list">
@@ -31,12 +34,8 @@ const Modeuel1 = () => (
       <h3>How To : Drop Down Menu > My Settings</h3>
     </section>
     <section className="module1foot">
-      <li>
-        <h1>Have A Question?</h1>
-      </li>
-      <li>
-        <Button>Visit Support</Button>
-      </li>
+      <h1>Have A Question?</h1>
+      <Button>Visit Support</Button>
     </section>
   </div>
 );

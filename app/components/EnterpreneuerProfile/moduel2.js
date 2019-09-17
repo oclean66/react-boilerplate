@@ -5,8 +5,11 @@ import YoutubeIcon from 'images/youtube-icon.png';
 import TwitterIcon from 'images/twitter-icon.png';
 
 const Modeuel2 = () => (
-  <div>
+  <div className="Modeuel1border">
     <section className="moduel2head">
+      <div onClick={alert} className="cancel">
+        x
+      </div>
       <h1>
         We<span style={{ color: '#1473bf' }}>P</span>itch Social Media
       </h1>

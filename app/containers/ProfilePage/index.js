@@ -22,11 +22,15 @@ import { logoutAction } from './actions';
 import Logo from '../../components/Logo';
 import Modeuel1 from '../../components/EnterpreneuerProfile/moduel1';
 import Modeueli1 from '../../components/InvestorProfile/modueli1';
+import Entupload from '../../components/EnterpreneuerProfile/entUpload';
+import EntProfile from '../../components/EnterpreneuerProfile/entProfile';
 
 import Modeuel2 from '../../components/EnterpreneuerProfile/moduel2';
 import Bitmap from '../../images/Bitmap.png';
 import Bitmap2 from '../../images/Bitmap2.png';
 import Bitmap3 from '../../images/Bitmap3.png';
+import Notification from '../../images/Notification.png';
+import BrugerMenu from '../../components/BurgerMenu';
 
 export function ProfilePage(props) {
   useInjectReducer({ key: 'profilePage', reducer });
@@ -35,7 +39,14 @@ export function ProfilePage(props) {
   return (
     <div className="cnt">
       <header>
+        <div className="BrugerMenu">
+          <BrugerMenu />
+        </div>
         <Logo />
+        <div className="notificationIcon">
+          <img src={Notification} alt="" />
+        </div>
+
         <div>
           <div id="nav">
             <ul>
@@ -63,20 +74,46 @@ export function ProfilePage(props) {
         </Button> */}
 
       <section className="moduel1Content">
-        <div onClick={alert} className="cancel">
-          x
-        </div>
-        <Modeuel1/>
+        {/* <Modeuel1/> */}
         {/* <Modeuel2/> */}
         {/* <Modeueli1/> */}
+        <Entupload />
+        {/* <EntProfile/> */}
       </section>
       <footer>
         <div>
-          <ul>
-            <li style={{float:'left'}}><img src={Bitmap2} alt=""/></li>
-            <li style={{float:'left', marginLeft:'35%'}}><img style={{height:'25px',marginTop:'4px'}} src={Bitmap3} alt=""/></li>
-            <li style={{float:'right'}}><img src={Bitmap} alt=""/></li>
-          </ul>
+          <div className="dropup">
+            <button className="dropbtn">
+              <img src={Bitmap2} alt="" />
+            </button>
+            <div className="dropup-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+            </div>
+          </div>
+          <div className="dropup">
+            <button className="dropbtn">
+              <img
+                style={{ height: '25px', marginTop: '4px' }}
+                src={Bitmap3}
+                alt=""
+              />
+            </button>
+            <div className="dropup-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+            </div>
+          </div>
+          <div className="dropup">
+            <button className="dropbtn">
+              <img src={Bitmap} alt="" />
+            </button>
+            <div className="dropup-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+            </div>{' '}
+            background-color: #f1f1f1;
+          </div>
         </div>
       </footer>
     </div>
