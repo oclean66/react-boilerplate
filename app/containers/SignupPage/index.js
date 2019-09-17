@@ -40,7 +40,7 @@ export function SignupPage(props) {
     message,
   } = props.signupPage;
   if (success) {
-    props.history.push('/grid');
+    props.history.push('/profile');
   }
 
   const { type } = props.match.params;

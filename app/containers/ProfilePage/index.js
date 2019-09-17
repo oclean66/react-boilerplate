@@ -74,10 +74,10 @@ export function ProfilePage(props) {
         </Button> */}
 
       <section className="moduel1Content">
-        {/* <Modeuel1/> */}
+            <Modeuel1/>
         {/* <Modeuel2/> */}
         {/* <Modeueli1/> */}
-        <Entupload />
+        {/* <Entupload /> */}
         {/* <EntProfile/> */}
       </section>
       <footer>
@@ -111,8 +111,7 @@ export function ProfilePage(props) {
             <div className="dropup-content">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
-            </div>{' '}
-            background-color: #f1f1f1;
+            </div>
           </div>
         </div>
       </footer>
