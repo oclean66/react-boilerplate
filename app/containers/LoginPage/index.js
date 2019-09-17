@@ -35,7 +35,7 @@ export function LoginPage(props) {
   useInjectSaga({ key: 'loginPage', saga });
   const { username, password, errors, success, message } = props.loginPage;
   if (success) {
-    props.history.push('/profile');
+    props.history.push('/grid');
   }
 
   setBackgroundImage();
