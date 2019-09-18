@@ -6,9 +6,14 @@ import { connect } from 'react-redux';
 const GuestRoute = ({ isAuthenticated, component: Component, ...rest }) => (
   <Route
     {...rest}
-    render={props =>
-      !isAuthenticated ? <Component {...props} /> : <Redirect to="/profile" />
-    }
+    render={props => {
+      console.log(props);
+      return !isAuthenticated ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to={`/profile/${props.match.params.type}`} />
+      );
+    }}
   />
 );
 

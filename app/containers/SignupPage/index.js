@@ -28,6 +28,7 @@ const StyledButton = styled(Button)`
 `;
 
 export function SignupPage(props) {
+  console.log(props);
   useInjectReducer({ key: 'signupPage', reducer });
   useInjectSaga({ key: 'signupPage', saga });
 
@@ -40,7 +41,7 @@ export function SignupPage(props) {
     message,
   } = props.signupPage;
   if (success) {
-    props.history.push('/profile');
+    props.history.push(`/login/${props.match.params.type}`);
   }
 
   const { type } = props.match.params;

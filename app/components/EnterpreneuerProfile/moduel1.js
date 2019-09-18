@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'components/UI';
 
-const Modeuel1 = () => (
+const Modeuel1 = props => (
   <div className="Modeuel1border">
     <section className="moduel1head">
-      <div onClick={alert} className="cancel">
+      <div onClick={() => props.setCountAction('second')} className="cancel">
         x
       </div>
       <h1>
@@ -31,7 +31,7 @@ const Modeuel1 = () => (
         How To : Click The Camera/Vedio Icon > Click The Folder Icon
       </h3>
       <h2>6.Setup your Settings</h2>
-      <h3>How To : Drop Down Menu > My Settings</h3>
+      <h3>How To : Drop Down Menu > My SettinalCLOSEertgs</h3>
     </section>
     <section className="module1foot">
       <h1>Have A Question?</h1>

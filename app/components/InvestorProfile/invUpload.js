@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'components/UI';
 import Star from '../../images/Star.png';
 
-const Entupload = props => (
+const InvUpload = () => (
   <div className="Modeuel1border">
     <section className="enthead">
       <h2>Username Here</h2>
@@ -17,12 +17,7 @@ const Entupload = props => (
         </div>
       </div>
       <div>
-        <Button
-          onClick={() => props.setCountAction('four')}
-          className="rightBtn"
-        >
-          Save Profile
-        </Button>
+        <Button className="rightBtn">Save Profile</Button>
       </div>
       <div className="StarCount">
         <h2 style={{ float: 'left' }}>My Star Count</h2>{' '}
@@ -38,4 +33,4 @@ const Entupload = props => (
   </div>
 );
 
-export default Entupload;
+export default InvUpload;

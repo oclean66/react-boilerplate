@@ -4,10 +4,10 @@ import FacebookIcon from 'images/facebook-icon.png';
 import YoutubeIcon from 'images/youtube-icon.png';
 import TwitterIcon from 'images/twitter-icon.png';
 
-const Modeuel2 = () => (
+const Modeuel2 = props => (
   <div className="Modeuel1border">
     <section className="moduel2head">
-      <div onClick={alert} className="cancel">
+      <div onClick={() => props.setCountAction('three')} className="cancel">
         x
       </div>
       <h1>

@@ -7,7 +7,7 @@ import { connectRouter } from 'connected-react-router';
 
 import history from 'utils/history';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
-import loginReducer from 'containers/LoginPage/reducer'
+import loginReducer from 'containers/LoginPage/reducer';
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
@@ -17,6 +17,7 @@ export default function createReducer(injectedReducers = {}) {
     language: languageProviderReducer,
     login: loginReducer,
     router: connectRouter(history),
+
     ...injectedReducers,
   });
 

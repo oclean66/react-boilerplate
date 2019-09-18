@@ -28,7 +28,7 @@ export default function HomePage(props) {
     <>
       <Logo />
       <div className="auth-container">
-        <Screen img={Screen1} />
+        <Screen />
       </div>
       <div>
         <div className="social-auth-buttons">

@@ -37,7 +37,7 @@ export default function App() {
           component={ForgotPasswordPage}
         />
         <GuestRoute exact path="/why/:type" component={WhyPage} />
-        <PrivateRoute exact path="/profile" component={ProfilePage} />
+        <PrivateRoute exact path="/profile/:type" component={ProfilePage} />
         <PrivateRoute exact path="/grid" component={GridPage} />
         <Route component={NotFoundPage} />
       </Switch>

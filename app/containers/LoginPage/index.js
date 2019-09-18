@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
@@ -31,12 +31,14 @@ const StyledButton = styled(Button)`
 `;
 
 export function LoginPage(props) {
+  console.log(props, 'xxcxcxcxcxcxcxc');
   useInjectReducer({ key: 'loginPage', reducer });
   useInjectSaga({ key: 'loginPage', saga });
   const { username, password, errors, success, message } = props.loginPage;
-  if (success) {
-    props.history.push('/grid');
-  }
+  // console.log(props)
+  // if (success) {
+  //   props.history.push(`/profile/${props.match.params.type}`);
+  // }
 
   setBackgroundImage();
 

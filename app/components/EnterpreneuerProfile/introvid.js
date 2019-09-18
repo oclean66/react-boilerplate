@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'components/UI';
 
-const IntroVid = () => (
+const IntroVid = props => (
   <div className="introVid">
-    <div onClick={alert} className="cancel">
+    <div onClick={() => props.setToggleAction(true)} className="cancel">
       x
     </div>
     <h2>Entice your Fan With An Introduction Video</h2>

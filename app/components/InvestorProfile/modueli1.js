@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'components/UI';
 
-const Modeueli1 = () => (
+const Modeueli1 = props => (
   <div className="Modeuel1border">
     <section className="moduel1head">
-      <div onClick={alert} className="cancel">
+      <div onClick={() => props.setCountAction('secondi')} className="cancel">
         x
       </div>
       <h1>Complete Investor Account SetUp</h1>
